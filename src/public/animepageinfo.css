@@ -1,0 +1,42 @@
+body {
+    margin: 0px;
+    background-color: #1e2124;
+    height: 100%;
+}
+
+html {
+    height: 100vh;
+}
+
+body * {
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Righteous', cursive;
+    box-sizing: border-box;
+}
+
+body * a {
+    text-decoration: none;
+}
+.banner > img {
+    position: absolute;
+    filter: brightness(50%);
+}
+.body-info > img {
+    margin-top: 240px;
+    margin-left: 80px;
+    position: absolute;
+    padding-top: -90px;
+}
+.body-info > p {
+    text-align: justify;
+    margin-top: 320px !important;
+    margin-left: 370px !important;
+    z-index: 1;
+    margin: 20px;
+    max-width: 680px;
+}
+.body-info {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}

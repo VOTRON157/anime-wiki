@@ -1,0 +1,19 @@
+body {
+    margin: 0px;
+    background-color: #1e2124;
+    height: 100%;
+}
+
+html {
+    height: 100vh;
+}
+
+body * {
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Righteous', cursive;
+    box-sizing: border-box;
+}
+
+body * a {
+    text-decoration: none;
+}

@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,200&family=Righteous&display=swap');
+
+.navbar-right > form > input {
+    border: none;
+    outline: none;
+    width: auto;
+    height: 35px;
+    border-radius: 10px;
+}
+
+.navbar-right > form > input:not(text) {
+    padding-left: 10px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 60px;
+    background-color: #2c2f33;
+}
+
+.navbar-right {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    float: right;
+}
+
+.navbar-right > a > button {
+    font-size: medium;
+    cursor: pointer;
+    margin-right: 0px !important;
+    margin: 30px;
+    border-radius: 10px;
+    border: 3px solid rgb(98, 236, 98);
+    background: rgb(98, 236, 98);
+    transition: border 0.5s ease-in-out;
+    width: 120px;
+    height: 35px;
+}
+.navbar-left > a > button  {
+    color: white;
+    transition: color 3s ease-in-out;
+}
+
+.navbar-right > a > button:hover {
+    border: 3px solid white;
+}
+
+.navbar-left>a>button {
+    cursor: pointer;
+    font-size: medium;
+    margin: 14px;
+    width: 120px;
+    height: 35px;
+    border-radius: 10px;
+    border: none;
+    background: transparent;
+    transition-property: background, color;
+    transition-duration: 0.5s;
+}
+
+.navbar-left > a > button:hover {
+    color: black;
+    background: rgb(98, 236, 98);
+}
+
+.navbar-center {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+.navbar-left {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    float: left;
+}

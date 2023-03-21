@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../partials/navbar.css">
+    <link rel="stylesheet" href="../results.css">
+    <base href="/" />
+    <title>Resultados</title>
+</head>
+
+<body>
+    <%- include('partials/navbar') %>
+        <section>
+            <h1>Resultados encontrados</h1>
+            <% for(var i in animes) { %>
+                <!-- Eu descobri dps q eu fiz essa merda q tinha como fazer de outro jeito mas agora fodase tabém ta funcionando-->
+                <% if(i==0) { %>
+                    <div class="results">
+                        <% } else { %>
+                            <% if(i % 4==1) { %>
+                    </div>
+                    <div class="results">
+                        <% } %>
+                            <a href="/animes/<%= animes[i].id %>">
+                                <div class="info-card">
+                                    <img src="<%= animes[i].attributes.posterImage.medium %>">
+                                    <p>
+                                        <%= animes[i].attributes.canonicalTitle %>
+                                    </p>
+                                </div>
+                            </a>
+                            <% } %>
+                                <% } %>
+        </section>
+</body>
+
+</html>

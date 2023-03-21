@@ -1,0 +1,50 @@
+body {
+    margin: 0px;
+    background-color: #1e2124;
+    height: 100%;
+}
+
+html {
+    height: 100vh;
+}
+
+body * {
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Righteous', cursive;
+    box-sizing: border-box;
+}
+
+body * a {
+    text-decoration: none;
+}
+
+h1 {
+    font-weight: 100;
+    color: white
+}
+
+
+h1 {
+    text-align: center;
+    margin-top: 60px;
+}
+.results {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+}
+.info-card {
+    margin: 30px;
+    margin-top: 50px;
+}
+.info-card > img {
+    max-width: 240px;
+}
+.info-card > p {
+    color: white;
+    text-align: center;
+    min-width: 240px;
+    max-width: 240px;
+}
