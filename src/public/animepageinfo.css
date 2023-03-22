@@ -1,11 +1,9 @@
-body {
+html, body {
+    position: relative;
+    min-height: 100%;
     margin: 0px;
+    padding: 0px;
     background-color: #1e2124;
-    height: 100%;
-}
-
-html {
-    height: 100vh;
 }
 
 body * {
@@ -17,26 +15,42 @@ body * {
 body * a {
     text-decoration: none;
 }
+.yt-video > h1 {
+    color: rgb(98, 236, 98);
+    font-weight: 100;
+}
+.yt-video {
+    color: aliceblue;
+    flex-direction: column;
+    margin-top: 680px;
+   align-items: center;
+   justify-content: center;
+   display: flex;
+}
 .banner > img {
     position: absolute;
     filter: brightness(50%);
 }
-.body-info > img {
+.poster {
     margin-top: 240px;
     margin-left: 80px;
     position: absolute;
     padding-top: -90px;
-}
-.body-info > p {
-    text-align: justify;
-    margin-top: 320px !important;
-    margin-left: 370px !important;
-    z-index: 1;
-    margin: 20px;
-    max-width: 680px;
-}
-.body-info {
     display: flex;
     flex-direction: row;
-    width: 100%;
+}
+.anime-desc > h2 {
+    color:rgb(98, 236, 98);
+    font-size: xx-large;
+    margin: 20px 0px;
+    -webkit-text-stroke: 1px black;
+}
+.anime-desc > p {
+    margin-top: 0px;
+}
+.anime-desc {
+    position: relative;
+    text-align: justify;
+    max-width: 700px;
+    padding-left: 40px;
 }

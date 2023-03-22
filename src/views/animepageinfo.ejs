@@ -6,19 +6,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../partials/navbar.css">
+    <link rel="stylesheet" href="../partials/footer.css">
     <link rel="stylesheet" href="../animepageinfo.css">
-    <base href="/"/>
+    <base href="/" />
     <title>Anime Info</title>
 </head>
 
 <body>
     <%- include('partials/navbar') %>
-    <div class="banner">
-        <img width="100%" height="300px" src="<%= anime.attributes.coverImage?.large || 'https://media.discordapp.net/attachments/722887140723392625/1087531695630209064/image.png' %>">
-    </div>
-    <div class="body-info">
-        <img src="<%= anime.attributes.posterImage?.small %>">
-        <p style="color: white;"><%= anime.attributes.synopsis %></p>
-    </div>
+        <div class="banner">
+            <img width="100%" height="300px"
+                src="<%= anime.attributes.coverImage?.large || 'https://media.discordapp.net/attachments/722887140723392625/1087531695630209064/image.png' %>">
+        </div>
+        <div class="poster">
+            <img src="<%= anime.attributes.posterImage?.small %>">
+            <div class="anime-desc">
+                <h2>
+                    <%= anime.attributes.canonicalTitle %>
+                </h2>
+                <p style="color: white;">
+                    <%= anime.attributes.synopsis %>
+                </p>
+            </div>
+        </div>
+        <div class="yt-video">
+            <h1>Trailer</h1>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= anime.attributes.youtubeVideoId %>"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+        </div>
+        <%- include('partials/footer') %>
 </body>
+
 </html>

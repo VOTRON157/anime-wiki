@@ -2,11 +2,6 @@ import KitsuMangaData from "./Interfaces/Manga";
 import KitsuAnimeData from "./Interfaces/Anime";
 import axios from 'axios'
 
-enum Direction {
-    name = 'text',
-    id = 'id'
-}
-
 class APIManager {
     private baseURL = 'https://kitsu.io/api/edge/'
     

@@ -1,0 +1,10 @@
+footer {
+    text-align: center;
+    font-size: large;
+    font-family: cursive !important;
+    color: rgb(255, 255, 255);
+    background: #2c2f33;
+    height: 50px;
+    margin-top: 50px;
+    line-height: 50px;
+}
