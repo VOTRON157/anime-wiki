@@ -14,27 +14,29 @@
 
 <body>
     <%- include('partials/navbar') %>
-        <section>
-            <h1>Resultados encontrados</h1>
-            <% for(var i in animes) { %>
-                <!-- Eu descobri dps q eu fiz essa merda q tinha como fazer de outro jeito mas agora fodase tabém ta funcionando-->
-                <% if(i==0) { %>
-                    <div class="results">
-                        <% } else { %>
-                            <% if(i % 4==1) { %>
-                    </div>
-                    <div class="results">
-                        <% } %>
-                            <a href="/animes/<%= animes[i].id %>">
-                                <div class="info-card">
-                                    <img src="<%= animes[i].attributes.posterImage.medium %>">
-                                    <p>
-                                        <%= animes[i].attributes.canonicalTitle %>
-                                    </p>
-                                </div>
+        <section name="animes" style="display: flex; flex-direction: column;">
+            <h1>Animes</h1>
+            <div class="cards">
+                <% for(anime of animes) { %>
+
+                    <div class="card">
+                        <img src="<%= anime.attributes.posterImage.medium %>" height="300px">
+                        <div class="card-right">
+                            <h1>
+                                <%= anime.attributes.canonicalTitle %>
+                            </h1>
+                            <p>
+                                <%= anime.attributes.synopsis %>
+                            </p>
+                            <a href="/animes/<%= anime.id %>">
+                                <button>
+                                    Ver mais
+                                </button>
                             </a>
-                            <% } %>
-                                <% } %>
+                        </div>
+                    </div>
+                    <% } %>
+            </div>
         </section>
         <%- include('partials/footer') %>
 </body>

@@ -10,7 +10,6 @@ html {
 
 body * {
     font-family: 'Poppins', sans-serif;
-    font-family: 'Righteous', cursive;
     box-sizing: border-box;
 }
 
@@ -18,33 +17,90 @@ body * a {
     text-decoration: none;
 }
 
-h1 {
-    font-weight: 100;
-    color: white
-}
-
-
-h1 {
-    text-align: center;
-    margin-top: 60px;
-}
-.results {
-    width: 100%;
+section {
     align-items: center;
     justify-content: center;
     display: flex;
-    flex-direction: row;
 }
-.info-card {
-    margin: 30px;
-    margin-top: 50px;
+
+.cards {
+    padding: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px 0px;
 }
-.info-card > img {
-    max-width: 240px;
-}
-.info-card > p {
+
+section>h1 {
+    font-size: 50px;
     color: white;
-    text-align: center;
-    min-width: 240px;
-    max-width: 240px;
+    font-family: "Righteous";
+    font-weight: 100;
+}
+
+.card {
+    width: 30%;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    display: inline-flex;
+    max-width: 100%;
+    border-radius: 8px;
+    height: 300px;
+    width: 30%;
+    transition: width 2.0s ease;
+    border-right: 4px solid white;
+    flex-direction: row;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: #2ecc71;
+}
+
+
+@media screen and (max-width: 1500px) {
+    .card {
+        width: 100%;
+    }
+}
+
+.card-right>a>button:hover {
+    box-shadow: 0px 0px 20px cyan;
+}
+
+.card-right>a>button {
+    border-radius: 5px;
+    width: 100px;
+    height: 35px;
+    cursor: pointer;
+    background-color: cyan;
+    box-shadow: none;
+    transition: box-shadow 1s;
+    border: 1px solid white;
+}
+
+.card-right {
+    font-family: Arial, Helvetica, sans-serif;
+    overflow: hidden;
+    flex-direction: column;
+    text-align: justify;
+    margin-left: 1pc;
+    margin-bottom: 1pc;
+    margin-right: 1pc;
+}
+
+.card-right>h1 {
+    color: black;
+}
+
+.card-right>p {
+    min-width: 100% !important;
+    height: 50px;
+    word-break: break-all;
+    overflow: hidden;
+}
+
+.card>img {
+    border-radius: 8px;
+}
+
+.card:hover {
+    width: 39%;
 }
