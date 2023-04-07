@@ -61,9 +61,11 @@ body * a {
 }
 
 .anime-desc>p {
+    padding-right: 5px;
     max-height: 344.64px;
     word-break: break-all;
-    overflow:scroll;
+    overflow-x: hidden;
+    overflow-y: scroll;
     margin-top: 0px;
 }
 
@@ -77,6 +79,7 @@ body * a {
 
 @media screen and (max-width: 1090px) {
     .anime-desc {
+        max-width: 100%;
         padding-left: 0px;
         padding: 25px;
     }
