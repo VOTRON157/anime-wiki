@@ -20,7 +20,7 @@
                 <% for(anime of animes) { %>
 
                     <div class="card">
-                        <img src="<%= anime.attributes.posterImage.medium %>" height="300px">
+                        <a href="/animes/<%= anime.id %>"><img src="<%= anime.attributes.posterImage.medium %>" height="300px"></a>
                         <div class="card-right">
                             <h1>
                                 <%= anime.attributes.canonicalTitle %>

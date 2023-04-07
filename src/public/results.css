@@ -9,7 +9,7 @@ html {
 }
 
 body * {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Righteous', Arial, Helvetica, sans-serif;
     box-sizing: border-box;
 }
 
@@ -34,8 +34,6 @@ section {
 section>h1 {
     font-size: 50px;
     color: white;
-    font-family: "Righteous";
-    font-weight: 100;
 }
 
 .card {
@@ -46,24 +44,22 @@ section>h1 {
     max-width: 100%;
     border-radius: 8px;
     height: 300px;
-    width: 30%;
     transition: width 2.0s ease;
-    border-right: 4px solid white;
+    border-right: 4px solid #fff15b;
     flex-direction: row;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    background-color: #2ecc71;
+    box-shadow: 0px 0px 20px rgb(0, 0, 0, 0.7);
+    background: #2c2f33;
 }
 
 .card-right>a>button:hover {
-    box-shadow: 0px 0px 20px cyan;
+    box-shadow: 0px 0px 20px #fff15b;
 }
-
 .card-right>a>button {
     border-radius: 5px;
     width: 100px;
     height: 35px;
     cursor: pointer;
-    background-color: cyan;
+    background-color: #fff15b;
     box-shadow: none;
     transition: box-shadow 1s;
     border: 1px solid white;
@@ -71,7 +67,9 @@ section>h1 {
 
 .card-right {
     font-family: Arial, Helvetica, sans-serif;
-    overflow: hidden;
+    overflow:hidden;
+    line-break: loose;
+    line-height: 23px;
     flex-direction: column;
     text-align: justify;
     margin-left: 1pc;
@@ -80,17 +78,20 @@ section>h1 {
 }
 
 .card-right>h1 {
-    color: black;
+    font-weight: 100;
+    color: white;
 }
 
 .card-right>p {
+    color: white;
+    font-weight: 100;
     min-width: 100% !important;
     height: 50px;
     word-break: break-all;
     overflow: hidden;
 }
 
-.card>img {
+.card> a >img {
     border-radius: 8px;
 }
 
@@ -114,6 +115,8 @@ section>h1 {
 
 @media screen and (max-width: 800px) {
     .cards {
+        width: 90%;
+        padding: 0px;
         align-items: center;
         justify-content: center;
     }
