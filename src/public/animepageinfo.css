@@ -18,7 +18,7 @@ body * a {
 }
 
 .yt-video>h1 {
-    color: rgb(98, 236, 98);
+    color: #fff15b;
     font-weight: 100;
 }
 
@@ -51,17 +51,24 @@ body * a {
 }
 
 .anime-desc>h2 {
-    color: rgb(98, 236, 98);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #fff15b;
     font-size: xx-large;
     margin: 20px 0px;
     -webkit-text-stroke: 1px black;
 }
 
 .anime-desc>p {
+    max-height: 344.64px;
+    word-break: break-all;
+    overflow:scroll;
     margin-top: 0px;
 }
 
 .anime-desc {
+    max-height: 424.64px;
     position: relative;
     text-align: justify;
     max-width: 700px;
