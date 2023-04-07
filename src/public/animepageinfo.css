@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
     position: relative;
     min-height: 100%;
     margin: 0px;
@@ -15,22 +16,31 @@ body * {
 body * a {
     text-decoration: none;
 }
-.yt-video > h1 {
+
+.yt-video>h1 {
     color: rgb(98, 236, 98);
     font-weight: 100;
 }
+
 .yt-video {
     color: aliceblue;
     flex-direction: column;
     margin-top: 680px;
-   align-items: center;
-   justify-content: center;
-   display: flex;
+    align-items: center;
+    justify-content: center;
+    display: flex;
 }
-.banner > img {
+
+.banner {
+    height: 305px;
     position: absolute;
-    filter: brightness(50%);
+    width: 100%;
+    background-color: white;
+    filter: brightness(40%);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
+
 .poster {
     margin-top: 240px;
     margin-left: 80px;
@@ -39,18 +49,53 @@ body * a {
     display: flex;
     flex-direction: row;
 }
-.anime-desc > h2 {
-    color:rgb(98, 236, 98);
+
+.anime-desc>h2 {
+    color: rgb(98, 236, 98);
     font-size: xx-large;
     margin: 20px 0px;
     -webkit-text-stroke: 1px black;
 }
-.anime-desc > p {
+
+.anime-desc>p {
     margin-top: 0px;
 }
+
 .anime-desc {
     position: relative;
     text-align: justify;
     max-width: 700px;
     padding-left: 40px;
+}
+
+@media screen and (max-width: 1090px) {
+    .anime-desc {
+        padding-left: 0px;
+        padding: 25px;
+    }
+
+    .yt-video>iframe {
+        width: 90vw;
+    }
+
+    .yt-video {
+        margin-top: 200px;
+    }
+
+    .anime-desc>h2 {
+        text-align: center;
+    }
+
+    .poster {
+        display: flex;
+        align-items: center;
+        margin-top: 60px !important;
+        flex-direction: column;
+        position: relative;
+        margin: 0px 0px 0px 0px;
+    }
+
+    .poster>img {
+        width: 225px;
+    }
 }

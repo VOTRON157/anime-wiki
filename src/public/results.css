@@ -101,8 +101,6 @@ section>h1 {
 
 @media screen and (max-width: 1320px) {
     .cards {
-        align-items: center;
-        justify-content: center;
         column-gap: 5px;
     }
     .card {
@@ -121,7 +119,7 @@ section>h1 {
         justify-content: center;
     }
     .card {
-        width: 80%;
+        width: 60%;
     }
     .card:hover {
         width: 100%;

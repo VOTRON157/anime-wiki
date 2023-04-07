@@ -14,12 +14,10 @@
 
 <body>
     <%- include('partials/navbar') %>
-        <div class="banner">
-            <img width="100%" height="300px"
-                src="<%= anime.attributes.coverImage?.large || 'https://media.discordapp.net/attachments/722887140723392625/1087531695630209064/image.png' %>">
+        <div class="banner" style="background-image: url('<%= anime.attributes.coverImage?.large || `https://media.discordapp.net/attachments/722887140723392625/1087531695630209064/image.png` %>')">
         </div>
         <div class="poster">
-            <img src="<%= anime.attributes.posterImage?.small %>">
+            <img src="<%= anime.attributes.posterImage?.small %>" width="300px">
             <div class="anime-desc">
                 <h2>
                     <%= anime.attributes.canonicalTitle %>
