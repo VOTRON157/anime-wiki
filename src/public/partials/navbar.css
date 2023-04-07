@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,200&family=Righteous&display=swap');
 
-.navbar-right > form > input {
+.navbar-right>form>input {
     border: none;
     outline: none;
     width: auto;
@@ -9,7 +9,7 @@
     margin: 16px;
 }
 
-.navbar-right > form > input:not(text) {
+.navbar-right>form>input:not(text) {
     padding-left: 10px;
 }
 
@@ -31,7 +31,7 @@
     width: 100%;
 }
 
-.navbar-right > a > button {
+.navbar-right>a>button {
     font-size: medium;
     cursor: pointer;
     margin: 16px;
@@ -44,12 +44,13 @@
     width: 120px;
     height: 100%;
 }
-.navbar-left > a > button  {
+
+.navbar-left>a>button {
     color: white;
     transition: color 3s ease-in-out;
 }
 
-.navbar-right > a > button:hover {
+.navbar-right>a>button:hover {
     border: 3px solid white;
 }
 
@@ -66,7 +67,7 @@
     transition-duration: 0.5s;
 }
 
-.navbar-left > a > button:hover {
+.navbar-left>a>button:hover {
     color: black;
     background: #fff15b;
 }
@@ -79,6 +80,7 @@
     width: 100%;
     float: left;
 }
+
 .menu {
     cursor: pointer;
     margin-left: 30px;
@@ -86,10 +88,12 @@
     align-self: center;
     height: 50%;
 }
-.dropdown > ul {
+
+.dropdown>ul {
     padding: 10px !important;
 }
-.dropdown > ul > li > a > button {
+
+.dropdown>ul>li>a>button {
     font-size: medium;
     margin-top: 3px;
     cursor: pointer;
@@ -101,7 +105,8 @@
     width: 120px;
     height: 100%;
 }
-.dropdown > ul > li > form > input {
+
+.dropdown>ul>li>form>input {
     border: none;
     outline: none;
     width: auto;
@@ -110,13 +115,15 @@
     margin-top: 10px;
     width: 100%;
 }
-.dropdown > ul > a > li {
+
+.dropdown>ul>a>li {
     color: white;
     text-align: center;
     background-color: rgb(57, 64, 64);
     margin: 5px;
     border-radius: 3px;
 }
+
 .dropdown {
     z-index: 2;
     display: none;
@@ -128,19 +135,41 @@
 }
 
 @media screen and (max-width: 1090px) {
-    .navbar-left > img[id="icon"] {
-        display: none;
+    .navbar-left>img[id="icon"] {
+        height: 80%;
+        align-self: center;
+        justify-self: center;
+        margin-left: 5vw;
     }
+
     .menu {
         display: flex;
     }
-    .navbar-left > a {
+
+    .navbar-left>a {
         display: none;
     }
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 740px) {
     .navbar-right {
         display: none;
+    }
+
+    .navbar-left {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .menu {
+        justify-self: flex-start;
+        margin-left: 0px;
+    }
+
+    .navbar-left>img[id="icon"] {
+        height: 80%;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
