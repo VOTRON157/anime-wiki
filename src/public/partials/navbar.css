@@ -6,6 +6,7 @@
     width: auto;
     height: 35px;
     border-radius: 10px;
+    margin: 16px;
 }
 
 .navbar-right > form > input:not(text) {
@@ -23,24 +24,25 @@
 
 .navbar-right {
     align-items: center;
-    justify-content: center;
+    justify-content: end;
+    margin-right: 30px;
     display: flex;
     height: 100%;
     width: 100%;
-    float: right;
 }
 
 .navbar-right > a > button {
     font-size: medium;
     cursor: pointer;
-    margin-right: 0px !important;
-    margin: 30px;
+    margin: 16px;
+    width: 120px;
+    height: 35px;
     border-radius: 10px;
     border: 3px solid rgb(98, 236, 98);
     background: rgb(98, 236, 98);
     transition: border 0.5s ease-in-out;
     width: 120px;
-    height: 35px;
+    height: 100%;
 }
 .navbar-left > a > button  {
     color: white;
@@ -69,19 +71,75 @@
     background: rgb(98, 236, 98);
 }
 
-.navbar-center {
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    height: 100%;
-    width: 100%;
-}
 
 .navbar-left {
-    align-items: center;
-    justify-content: center;
+    margin-left: 30px;
     display: flex;
     height: 100%;
     width: 100%;
     float: left;
+}
+.menu {
+    cursor: pointer;
+    margin-left: 30px;
+    display: none;
+    align-self: center;
+    height: 50%;
+}
+.dropdown > ul {
+    padding: 10px !important;
+}
+.dropdown > ul > li > a > button {
+    font-size: medium;
+    margin-top: 3px;
+    cursor: pointer;
+    width: 120px;
+    height: 35px;
+    border-radius: 10px;
+    border: 3px solid rgb(98, 236, 98);
+    background: rgb(98, 236, 98);
+    width: 120px;
+    height: 100%;
+}
+.dropdown > ul > li > form > input {
+    border: none;
+    outline: none;
+    width: auto;
+    height: 35px;
+    border-radius: 10px;
+    margin-top: 10px;
+    width: 100%;
+}
+.dropdown > ul > a > li {
+    color: white;
+    text-align: center;
+    background-color: rgb(57, 64, 64);
+    margin: 5px;
+    border-radius: 3px;
+}
+.dropdown {
+    z-index: 2;
+    display: none;
+    background: #2c2f33;
+    margin-left: 30px;
+    color: white;
+    position: absolute;
+}
+
+@media screen and (max-width: 1090px) {
+    .navbar-left > img[id="icon"] {
+        display: none;
+    }
+    .menu {
+        display: flex;
+    }
+    .navbar-left > a {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 570px) {
+    .navbar-right {
+        display: none;
+    }
 }

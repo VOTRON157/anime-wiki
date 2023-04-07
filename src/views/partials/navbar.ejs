@@ -1,12 +1,12 @@
 <nav class="navbar">
     <div class="navbar-left">
-        <img src="https://media.discordapp.net/attachments/722887140723392625/1087135346661261372/Novo_Projeto_1.png" height="100%">
-        <a><button>Suporte</button></a>
+        <img src="https://media.discordapp.net/attachments/1091819629120331869/1093685970454462494/main-menu.png"
+            class="menu" id="menu" onclick="menuClicked()">
+        <img src="https://media.discordapp.net/attachments/722887140723392625/1087135346661261372/Novo_Projeto_1.png"
+            height="100%" id="icon">
         <a><button>Inicio</button></a>
+        <a><button>Suporte</button></a>
         <a><button>Github</button></a>
-    </div>
-    <div class="navbar-center">
-        <!-- Nada aqui... -->
     </div>
     <div class="navbar-right">
         <form method="POST" action="animes/search">
@@ -16,3 +16,35 @@
         <a href="login"><button>Registrar</button></a>
     </div>
 </nav>
+<div class="dropdown">
+    <ul type="none">
+        <a href="#">
+            <li>Inicio</li>
+        </a>
+        <a href="#">
+            <li>Suporte</li>
+        </a>
+        <a href="#">
+            <li>Github</li>
+        </a>
+        <li>
+            <a><button>Login</button></a>
+            <a><button>Registar</button></a>
+        </li>
+        <li>
+            <form method="POST" action="animes/search">
+                <input type="text" name="animeName" placeholder="Pesquisar animes">
+            </form>
+        </li>
+    </ul>
+</div>
+<script>
+    function menuClicked() {
+        const dropdown = document.getElementsByClassName("dropdown")[0]
+        if(dropdown.style.display == ""){
+            dropdown.style.display = "inline-flex"
+        } else {
+            dropdown.style.display = ""
+        }
+    }
+</script>

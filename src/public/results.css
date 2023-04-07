@@ -54,13 +54,6 @@ section>h1 {
     background-color: #2ecc71;
 }
 
-
-@media screen and (max-width: 1500px) {
-    .card {
-        width: 100%;
-    }
-}
-
 .card-right>a>button:hover {
     box-shadow: 0px 0px 20px cyan;
 }
@@ -102,5 +95,32 @@ section>h1 {
 }
 
 .card:hover {
-    width: 39%;
+    width: 39.5%;
+}
+
+@media screen and (max-width: 1320px) {
+    .cards {
+        align-items: center;
+        justify-content: center;
+        column-gap: 5px;
+    }
+    .card {
+        width: 40%;
+    }
+    .card:hover {
+        width: 59%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .cards {
+        align-items: center;
+        justify-content: center;
+    }
+    .card {
+        width: 80%;
+    }
+    .card:hover {
+        width: 100%;
+    }
 }
