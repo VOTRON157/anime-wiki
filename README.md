@@ -9,7 +9,7 @@ Esse projeto é de codigo aberto, qualquer sugestão, correção de bug's ou cri
 
 ## 🏠 Como hospedar esse projeto
 
-Primeiro, instale manualmente esse reposotiorio em seu computador ou clone-o, usando o comando `git clone`.
+Primeiro, instale manualmente esse repositorio em seu computador ou clone-o, usando o comando `git clone`.
 
 Esse projeto utiliza TypeScript, então instale o TypeScript
 
