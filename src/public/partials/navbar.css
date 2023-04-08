@@ -1,15 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,200&family=Righteous&display=swap');
 
+.navbar-right>form {
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
 .navbar-right>form>input {
+    width: 4.1vw;
     border: none;
     outline: none;
-    width: auto;
-    height: 35px;
+    height: 45%;
     border-radius: 10px;
-    margin: 16px;
 }
 
 .navbar-right>form>input:not(text) {
+    width: fit-content;
+    font-size: 1vw;
     padding-left: 10px;
 }
 
@@ -18,13 +25,15 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    height: 60px;
+    height: 5.9vh;
+    min-height: 60px;
     background-color: #2c2f33;
 }
 
 .navbar-right {
+    gap: 30px;
     align-items: center;
-    justify-content: end;
+    justify-content:flex-end;
     margin-right: 30px;
     display: flex;
     height: 100%;
@@ -32,17 +41,14 @@
 }
 
 .navbar-right>a>button {
-    font-size: medium;
+    font-size: 1vw;
+    min-height: 20px;
     cursor: pointer;
-    margin: 16px;
-    width: 120px;
-    height: 35px;
+    width: 100%;
     border-radius: 10px;
     border: 3px solid #fff15b;
     background: #fff15b;
     transition: border 0.5s ease-in-out;
-    width: 120px;
-    height: 100%;
 }
 
 .navbar-left>a>button {
@@ -53,13 +59,22 @@
 .navbar-right>a>button:hover {
     border: 3px solid white;
 }
-
+.navbar-right > a {
+    min-width: 155px;
+    width: 13%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.navbar-left > a {
+    width: 14%;
+    display: flex;
+    align-items: center;
+}
 .navbar-left>a>button {
     cursor: pointer;
-    font-size: medium;
-    margin: 14px;
-    width: 120px;
-    height: 35px;
+    font-size: 1.1vw;
+    width: 100%;
     border-radius: 10px;
     border: none;
     background: transparent;
@@ -74,6 +89,8 @@
 
 
 .navbar-left {
+    gap: 50px;
+    justify-content: flex-start;
     margin-left: 30px;
     display: flex;
     height: 100%;
@@ -135,6 +152,14 @@
 }
 
 @media screen and (max-width: 1090px) {
+    .navbar-right>a>button  {
+        font-size: 18px;
+    }
+
+    .navbar-right>form>input:not(text) {
+        font-size: 12px;
+    }
+
     .navbar-left>img[id="icon"] {
         height: 80%;
         align-self: center;
