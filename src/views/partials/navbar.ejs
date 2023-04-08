@@ -1,3 +1,6 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 <nav class="navbar">
     <div class="navbar-left">
         <img src="https://media.discordapp.net/attachments/1091819629120331869/1093685970454462494/main-menu.png"
@@ -12,8 +15,8 @@
         <form method="POST" action="animes/search">
             <input type="text" name="animeName" placeholder="Pesquisar animes">
         </form>
-        <a href="login"><button>Entrar</button></a>
-        <a href="login"><button>Criar conta</button></a>
+        <a href="login"><button><i class="fa-solid fa-right-to-bracket"></i>Entrar</button></a>
+        <a href="login"><button><i class="fa-solid fa-user-plus"></i> Criar conta</button></a>
     </div>
 </nav>
 <div class="dropdown">
@@ -41,8 +44,8 @@
 <script>
     function menuClicked() {
         const dropdown = document.getElementsByClassName("dropdown")[0]
-        if(dropdown.style.display == ""){
-            dropdown.style.display = "inline-flex"
+        if (dropdown.style.display == "") {
+            dropdown.style.display = "flex"
         } else {
             dropdown.style.display = ""
         }
