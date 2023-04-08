@@ -32,7 +32,7 @@ Depois de tudo instalado e configurado, basta rodar o codigo, você pode rodar u
 npx ts-node src/server.ts
 ```
 
-*(Não é possivel compilar para JavaScript usando o comando `tsc`, já que os arquivos `.ejs` não podem ser compialdos, para "corrigir" isso, você pode ver esse exemplo de como implementar: https://developer.okta.com/blog/2018/11/15/node-express-typescript (mas por enquanto o `ts-node` não parece apresentar nenhum erro para rodar os códigos.)*
+*(Não é possivel compilar para JavaScript usando o comando `tsc`, já que os arquivos `.ejs` não podem ser compialdos, para "corrigir" isso, você pode ver esse exemplo de como implementar: https://developer.okta.com/blog/2018/11/15/node-express-typescript (mas por enquanto o `ts-node` não parece apresentar nenhum erro para rodar os códigos.))*
 
 Depois de executado o comando e se tudo tiver ocorrido certo você ira ver uma mensagem no terminal (Servidor rodando na porta 3000).
 
