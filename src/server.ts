@@ -2,7 +2,6 @@ import express from 'express'
 import Main from './Routes/Main'
 import Anime from './Routes/Animes'
 import path from 'node:path'
-import './Structures/KitsuAPIManager'
 import bodyParser from 'body-parser'
 
 const app = express()

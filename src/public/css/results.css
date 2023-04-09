@@ -1,21 +1,7 @@
-body {
-    margin: 0px;
-    background-color: #1e2124;
-    height: 100%;
-}
+/* 
+    Estilo da página de resultados da pesquisa (animes)
+*/
 
-html {
-    height: 100vh;
-}
-
-body * {
-    font-family: 'Righteous', Arial, Helvetica, sans-serif;
-    box-sizing: border-box;
-}
-
-body * a {
-    text-decoration: none;
-}
 
 section {
     align-items: center;

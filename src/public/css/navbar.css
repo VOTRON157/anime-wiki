@@ -1,3 +1,8 @@
+/* 
+    Estilo da navbar
+*/
+
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,200&family=Righteous&display=swap');
 i {
     margin-right: 8px;
@@ -155,7 +160,16 @@ i {
     margin: 5px;
     border-radius: 3px;
 }
-@keyframes dr {
+
+@keyframes dr_saindo {
+    from {
+        margin-top: 0px;
+    }
+    to {
+        margin-top: -300px;
+    }
+}
+@keyframes dr_entrando {
     from {
         margin-top: -300px;
     }
@@ -163,6 +177,7 @@ i {
         margin-top: 0px;
     }
 }
+
 .dropdown {
     align-items: center;
     justify-content: center;
@@ -173,7 +188,6 @@ i {
     margin-left: 0px;
     width: 100%;
     color: white;
-    animation: dr 2s;
 }
 @media screen and (max-width: 1920px) {
     .navbar-right>a>button  {
@@ -181,8 +195,6 @@ i {
     }
 }
 @media screen and (max-width: 1090px) {
-   
-
     .navbar-right>form>input:not(text) {
         font-size: 12px;
     }

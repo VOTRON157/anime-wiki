@@ -4,7 +4,7 @@
 <nav class="navbar">
     <div class="navbar-left">
         <img src="https://media.discordapp.net/attachments/1091819629120331869/1093685970454462494/main-menu.png"
-            class="menu" id="menu" onclick="menuClicked()">
+            class="menu" id="menu">
         <img src="https://media.discordapp.net/attachments/818572573146218532/1093973903233261730/168089403354165360.png"
             height="100%" id="icon">
         <a href="/"><button>Inicio</button></a>
@@ -12,8 +12,8 @@
         <a translate="no"><button>Github</button></a>
     </div>
     <div class="navbar-right">
-        <form method="POST" action="animes/search">
-            <input type="text" name="animeName" placeholder="Pesquisar animes">
+        <form method="GET" action="animes/search">
+            <input type="text" name="query" placeholder="Pesquisar animes">
         </form>
         <a href="login"><button><i class="fa-solid fa-right-to-bracket"></i>Entrar</button></a>
         <a href="login"><button><i class="fa-solid fa-user-plus"></i> Criar conta</button></a>
@@ -35,19 +35,12 @@
             <a><button>Criar conta</button></a>
         </li>
         <li>
-            <form method="POST" action="animes/search">
-                <input type="text" name="animeName" placeholder="Pesquisar animes">
+            <form method="GET" action="animes/search">
+                <input type="text" name="query" placeholder="Pesquisar animes">
             </form>
         </li>
     </ul>
 </div>
 <script>
-    function menuClicked() {
-        const dropdown = document.getElementsByClassName("dropdown")[0]
-        if (dropdown.style.display == "") {
-            dropdown.style.display = "flex"
-        } else {
-            dropdown.style.display = ""
-        }
-    }
+   
 </script>

@@ -2,20 +2,15 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../partials/navbar.css">
-    <link rel="stylesheet" href="../partials/scrollbar.css">
-    <link rel="stylesheet" href="../partials/footer.css">
-    <link rel="stylesheet" href="../animepageinfo.css">
-    <base href="/" />
+    <%- include ('partials/header') %>
+    <link rel="stylesheet" href="css/animepageinfo.css">
     <title>Anime Info</title>
 </head>
 
 <body>
     <%- include('partials/navbar') %>
-        <div class="banner" style="background-image: url('<%= anime.attributes.coverImage?.large || `https://media.discordapp.net/attachments/722887140723392625/1087531695630209064/image.png` %>')">
+        <div class="banner"
+            style="background-image: url('<%= anime.attributes.coverImage?.large || `https://media.discordapp.net/attachments/722887140723392625/1087531695630209064/image.png` %>')">
         </div>
         <div class="poster">
             <img src="<%= anime.attributes.posterImage?.small %>" width="300px">

@@ -1,3 +1,8 @@
+/* 
+    Estilo da barra de rolagem
+*/
+
+
 ::-webkit-scrollbar-corner {
     display: none;
 }
