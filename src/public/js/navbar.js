@@ -1,7 +1,6 @@
 $(document).ready(function () {
     $('.menu').click(function (e) {
         const dropdown = $('.dropdown')
-        console.log('vou deixar de ser besta')
         if (dropdown.css('display') == 'none') {
             dropdown.css('animation', 'dr_entrando 2s')
             dropdown.css('display', 'flex')
