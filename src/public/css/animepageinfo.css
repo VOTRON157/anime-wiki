@@ -1,22 +1,3 @@
-html,
-body {
-    position: relative;
-    min-height: 100%;
-    margin: 0px;
-    padding: 0px;
-    background-color: #1e2124;
-}
-
-body * {
-    font-family: 'Poppins', sans-serif;
-    font-family: 'Righteous', cursive;
-    box-sizing: border-box;
-}
-
-body * a {
-    text-decoration: none;
-}
-
 .yt-video>h1 {
     color: #fff15b;
     font-weight: 100;
@@ -108,4 +89,27 @@ body * a {
     .poster>img {
         width: 225px;
     }
+}
+
+.episodes-buttons {
+    display: grid;
+    width: 80%;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+}
+
+.episodes-buttons>a {
+    width: 70%;
+}
+.episodes-buttons>a>button:hover {
+    transform: scale(1.1);
+}
+.episodes-buttons>a>button {
+    transition: all .5s;
+    cursor: pointer;
+    background-color: rgb(98, 236, 98);
+    border-radius: 3px;
+    height: 30px;
+    width: 100%;
+    border: none;
 }

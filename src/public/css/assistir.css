@@ -1,0 +1,42 @@
+.stream h1 {
+    color: white;
+    font-weight: 100;
+}
+.stream {
+    width: 100%;
+    padding: 25%;
+    margin-top: -23%;
+}
+
+.iframe-container {
+    overflow: hidden;
+    padding-top: 56.25%;
+    position: relative;
+}
+.player-buttons {
+    margin-top: 15px;
+    cursor: pointer;
+    border: none;
+    background-color: rgb(98, 236, 98);
+    padding: 10px;
+    border-radius: 3px;
+}
+.iframe-container video {
+    display: none;
+    border: 0;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    width: 100%;
+}
+.iframe-container iframe {
+    border: 0;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    width: 100%;
+}

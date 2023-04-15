@@ -23,3 +23,46 @@ body * {
 body * a {
     text-decoration: none;
 }
+
+.load {
+    transition: all 0.5s;
+    backdrop-filter: blur(30px);
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: 3;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.loader {
+    border: 16px solid #ffffff;
+    border-top: 16px solid rgb(98, 236, 98);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 47.9%;
+    margin: -25px 0 0 -25px;
+    width: 120px;
+    height: 120px;
+    animation: spin 1s infinite;
+}
+.load-text {
+    width: 100%;
+    text-align: center;
+    color: white;
+    position: absolute;
+    top: 63%;
+    text-align: center;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

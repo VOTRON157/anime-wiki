@@ -3,37 +3,38 @@
 
 <head>
     <%- include ('partials/header') %>
-    <link rel="stylesheet" href="css/results.css">
-    <title>Resultados</title>
+        <link rel="stylesheet" href="css/results.css">
+        <title>Resultados</title>
 </head>
 
 <body>
-    <%- include('partials/navbar') %>
-        <section name="animes" style="display: flex; flex-direction: column;">
-            <h1>Animes</h1>
-            <div class="cards">
-                <% for(anime of animes) { %>
-                    <div class="card">
-                        <a href="/animes/anime/<%= anime.id %>"><img src="<%= anime.attributes.posterImage.medium %>"
-                                height="300px"></a>
-                        <div class="card-right">
-                            <h1>
-                                <%= anime.attributes.canonicalTitle %>
-                            </h1>
-                            <p>
-                                <%= anime.attributes.synopsis %>
-                            </p>
-                            <a href="/animes/anime/<%= anime.id %>">
-                                <button>
-                                    Ver mais
-                                </button>
-                            </a>
+    <%- include('partials/load') %>
+        <%- include('partials/navbar') %>
+            <section name="animes" style="display: flex; flex-direction: column;">
+                <h1>Animes</h1>
+                <div class="cards">
+                    <% for(anime of animes) { %>
+                        <div class="card">
+                            <a href="/animes/anime/<%= anime.id %>"><img
+                                    src="<%= anime.attributes.posterImage.medium %>" height="300px"></a>
+                            <div class="card-right">
+                                <h1>
+                                    <%= anime.attributes.canonicalTitle %>
+                                </h1>
+                                <p>
+                                    <%= anime.attributes.synopsis %>
+                                </p>
+                                <a href="/animes/anime/<%= anime.id %>">
+                                    <button>
+                                        Ver mais
+                                    </button>
+                                </a>
+                            </div>
                         </div>
-                    </div>
-                    <% } %>
-            </div>
-        </section>
-        <%- include('partials/footer') %>
+                        <% } %>
+                </div>
+            </section>
+            <%- include('partials/footer') %>
 </body>
 
 </html>

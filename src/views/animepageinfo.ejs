@@ -3,34 +3,48 @@
 
 <head>
     <%- include ('partials/header') %>
-    <link rel="stylesheet" href="css/animepageinfo.css">
-    <title>Anime Info</title>
+        <link rel="stylesheet" href="css/animepageinfo.css">
+        <title>Anime Info</title>
 </head>
 
 <body>
-    <%- include('partials/navbar') %>
-        <div class="banner"
-            style="background-image: url('<%= anime.attributes.coverImage?.large || `https://media.discordapp.net/attachments/722887140723392625/1087531695630209064/image.png` %>')">
-        </div>
-        <div class="poster">
-            <img src="<%= anime.attributes.posterImage?.small %>" width="300px">
-            <div class="anime-desc">
-                <h2>
-                    <%= anime.attributes.canonicalTitle %>
-                </h2>
-                <p style="color: white;">
-                    <%= anime.attributes.synopsis %>
-                </p>
+    <%- include('partials/load') %>
+        <%- include('partials/navbar') %>
+            <div class="banner"
+                style="background-image: url('<%= anime.attributes.coverImage?.large || `https://media.discordapp.net/attachments/722887140723392625/1087531695630209064/image.png` %>')">
             </div>
-        </div>
-        <div class="yt-video">
-            <h1 translate="no">Trailer</h1>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= anime.attributes.youtubeVideoId %>"
-                title="YouTube video player" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen></iframe>
-        </div>
-        <%- include('partials/footer') %>
+            <div class="poster">
+                <img src="<%= anime.attributes.posterImage?.small %>" width="300px">
+                <div class="anime-desc">
+                    <h2>
+                        <%= anime.attributes.canonicalTitle %>
+                    </h2>
+                    <p style="color: white;">
+                        <%= anime.attributes.synopsis %>
+                    </p>
+                </div>
+            </div>
+            <div class="yt-video">
+                <h1 translate="no">Trailer</h1>
+                <iframe width="560" height="315"
+                    src="https://www.youtube.com/embed/<%= anime.attributes.youtubeVideoId %>"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+            </div>
+            <section style="display: flex; align-items: center; justify-content: center; flex-direction: column;">
+                <h1 style="color: white;">Episodios</h1>
+                <div class="episodes-buttons">
+                    <% for(let episode=0; episode < episodes; episode++) { %>
+                        <a href="animes/anime/<%= anime.id %>/assistir/<%= episode+1 %>">
+                            <button><i class="fa fa-play-circle" aria-hidden="true"></i> Episodio n. <%= episode+1 %>
+                                    </button>
+                        </a>
+                        <% } %>
+                    
+                </div>
+            </section>
+            <%- include('partials/footer') %>
 </body>
 
 </html>

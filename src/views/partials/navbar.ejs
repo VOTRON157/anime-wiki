@@ -1,46 +1,32 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-<nav class="navbar">
+
+<nav>
     <div class="navbar-left">
-        <img src="https://media.discordapp.net/attachments/1091819629120331869/1093685970454462494/main-menu.png"
-            class="menu" id="menu">
-        <img src="https://media.discordapp.net/attachments/818572573146218532/1093973903233261730/168089403354165360.png"
-            height="100%" id="icon">
-        <a href="/"><button>Inicio</button></a>
-        <a><button>Suporte</button></a>
-        <a translate="no"><button>Github</button></a>
+        <a href="/" style="height: 100%; align-items: center; display: flex;"><img src="/images/logo6.png" alt="Logo do Site" height="80%"></a>
+        <div class="navbar-buttons">
+            <a href="#"><button class="buttons-style-nav">
+                    <i class="fa fa-home"></i> Inicio
+                </button></a>
+            <a href="#"><button class="buttons-style-nav">
+                    <i class="fa-brands fa-github"></i> Github
+                </button></a>
+        </div>
     </div>
-    <div class="navbar-right">
-        <form method="GET" action="animes/search">
-            <input type="text" name="query" placeholder="Pesquisar animes">
+    <div class="navbar-direita">
+        <form method="get" action="animes/search">
+            <div class="input-container">
+                <i class="fa fa-search"
+                    style="position: absolute; top: 28px; z-index: -1; margin-left: 5px; color: white;"></i>
+                <input type="text" class="navbar-input" name="query" required>
+            </div>
         </form>
-        <a href="login"><button><i class="fa-solid fa-right-to-bracket"></i>Entrar</button></a>
-        <a href="login"><button><i class="fa-solid fa-user-plus"></i> Criar conta</button></a>
+        <a href="#"><button class="buttons-style-nav">
+                <i class="fa-solid fa-right-to-bracket"></i> Logar
+            </button></a>
+        <a href="#"><button class="buttons-style-nav">
+                <i class="fa-solid fa-user-plus"></i> Criar conta
+            </button></a>
     </div>
 </nav>
-<div class="dropdown">
-    <ul type="none">
-        <a href="#">
-            <li>Inicio</li>
-        </a>
-        <a href="#">
-            <li>Suporte</li>
-        </a>
-        <a href="#" translate="no">
-            <li>Github</li>
-        </a>
-        <li>
-            <a><button>Entrar</button></a>
-            <a><button>Criar conta</button></a>
-        </li>
-        <li>
-            <form method="GET" action="animes/search">
-                <input type="text" name="query" placeholder="Pesquisar animes">
-            </form>
-        </li>
-    </ul>
-</div>
-<script>
-   
-</script>

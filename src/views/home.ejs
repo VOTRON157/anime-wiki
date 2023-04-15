@@ -3,19 +3,20 @@
 
 <head>
     <%- include ('partials/header') %>
-    <link rel="stylesheet" href="css/home.css">
-    <title>Minha Lista de Anime</title>
+        <link rel="stylesheet" href="css/home.css">
+        <title>Minha Lista de Anime</title>
 </head>
 
 <body>
-    <%- include('partials/navbar') %>
-        <div class="principal" style="background: url(images/welcome.jpg);">
-            <div class="texts">
-                <h1>Bem vindo(a)</h1>
-                <p>Boas vindas ao <strong>Minha Lista de Anime</strong>! saiba como o site funciona nesse post.</p>
+    <%- include('partials/load') %>
+        <%- include('partials/navbar') %>
+            <div class="principal" style="background: url(images/welcome.jpg);">
+                <div class="texts">
+                    <h1>Bem vindo(a)</h1>
+                    <p>Boas vindas ao <strong>Minha Lista de Anime</strong>! saiba como o site funciona nesse post.</p>
+                </div>
             </div>
-        </div>
-        <%- include('partials/footer') %>
+            <%- include('partials/footer') %>
 </body>
 
 </html>
