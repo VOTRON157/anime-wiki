@@ -15,23 +15,35 @@
                 <h1>Assistindo: <%= anime.attributes.canonicalTitle %>: Episódio n. <%= episode %>
                 </h1>
                 <div class="iframe-container">
-                    <video width="100%" height="100%" controls>
-                        <source src="<%= dubLink %>" type="video/mp4" name="dublado">
-                        Your browser does not support the video tag.
-                      </video>
                     <iframe scrolling="no" src="<%= streamUrl %>" allowfullscreen="true" webkitallowfullscreen="true"
                         mozallowfullscreen="true" id="stream"></iframe>
                 </div>
-                <a href="/animes/anime/<%= anime.id %>/assistir/<%= episode - 1 %>"><button class="player-buttons"><i class="fa fa-arrow-left" aria-hidden="true"></i> Episódio anterior</button></a>
-                <a href="/animes/anime/<%= anime.id %>/assistir/<%= episode + 1 %>"><button class="player-buttons">Próximo episódio <i class="fa fa-arrow-right" aria-hidden="true"></i></button></a>
+                <a href="/animes/anime/<%= anime.id %>/assistir/<%= episode - 1 %>"><button class="player-buttons"><i
+                            class="fa fa-arrow-left" aria-hidden="true"></i> Episódio anterior</button></a>
+                <a href="/animes/anime/<%= anime.id %>/assistir/<%= episode + 1 %>"><button
+                        class="player-buttons">Próximo episódio <i class="fa fa-arrow-right"
+                            aria-hidden="true"></i></button></a>
                 <a><button class="player-buttons" onclick="history.back()"><i class="fa fa-film" aria-hidden="true"></i>
                         Todos os episodios</button></a>
                 <a><button class="player-buttons" onclick="location.reload()"><i class="fa fa-refresh"
                             aria-hidden="true"></i> Recarregar video / Ver em inglês</button></a>
                 <% if(temDublado) { %>
-                    <a><button style="background: gold;" onclick="$('video').css('display', 'block'); $(window.document.getElementById('stream')).remove(); this.disabled = true; this.style.cursor = 'not-allowed'; alert('O episódio foi trocado para versão pt-br.')" class="player-buttons"><i class="fa fa-language" aria-hidden="true"></i> Assistir dublado</button></a>
-                <% } %>
+                    <a><button style="background: gold;" onclick="openDublado()" class="player-buttons"><i
+                                class="fa fa-language" aria-hidden="true"></i> Assistir
+                            dublado</button></a>
+                    <% } %>
             </div>
+
+            <script>
+                function openDublado() {
+                    Swal.fire('O episódio foi aberto em uma nova guia.')
+                    setTimeout(() => {
+                        history.back()
+                        window.open('<%= dubLink %>')
+                    }, 1000)
+                }
+            </script>
+
             <%- include('partials/footer') %>
 </body>
 
