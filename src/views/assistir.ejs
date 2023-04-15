@@ -36,11 +36,17 @@
 
             <script>
                 function openDublado() {
-                    Swal.fire('O episódio foi aberto em uma nova guia.')
-                    setTimeout(() => {
-                        history.back()
-                        window.open('<%= dubLink %>')
-                    }, 1000)
+                    Swal.fire({
+                        title: 'Cloque no botão "Copiar" para copiar o link do video dublado, em seguida cole o link no seu nevagador.',
+                        showCancelButton: true,
+                        confirmButtonText: 'Copiar',
+                        cancelButtonText: `Deixa pra lá`,
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            navigator.clipboard.writeText('<%= dubLink %>');
+                            Swal.fire('Link copiado para a aréa de transferencia.', '', 'success')
+                        }
+                    })
                 }
             </script>
 
