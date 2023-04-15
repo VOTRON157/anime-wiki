@@ -3,14 +3,12 @@ import Main from './Routes/Main'
 import Anime from './Routes/Animes'
 import path from 'path'
 import bodyParser from 'body-parser'
-import cors from "cors"
 
 const app = express()
 
 app.set('view engine', 'ejs')
 app.set('views', path.join(__dirname, 'views'))
 
-app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(express.static(path.join(__dirname, 'public')))
 app.use('/', Main);
