@@ -4,6 +4,7 @@
 <head>
     <%- include ('partials/header') %>
         <link rel="stylesheet" href="css/assistir.css">
+        <script src="https://unpkg.com/twemoji@latest/dist/twemoji.min.js" crossorigin="anonymous"></script>
         <title>Assistindo: <%= anime.attributes.canonicalTitle %>: Episódio n. <%= episode %>
         </title>
 </head>
@@ -12,15 +13,19 @@
     <%- include('partials/load') %>
         <%- include('partials/navbar') %>
             <div class="stream">
-                <h1>Assistindo: <%= anime.attributes.canonicalTitle %>: Episódio n. <%= episode %>
-                </h1>
+                <h1>🎬 <%= anime.attributes.canonicalTitle %> <i>Episódio n. <%= episode %></i></h1>
+                <h5 style="color: red; font-weight: 100;"><i>* Alguns animes não possuem a versão dublada ou legendada,
+                        apenas a versão em inglês.<br>Para assistir na pt-BR clique no botão destacado em dourado.<i>
+                </h5>
                 <div class="iframe-container">
-                    <video width="100%" height="100%" controls>
-                        <source src="<%= temDublado.url %>" type="video/mp4" name="dublado">
-                        Your browser does not support the video tag.
-                    </video>
-                    <iframe scrolling="no" src="<%= streamUrl %>" allowfullscreen="true" webkitallowfullscreen="true"
-                        mozallowfullscreen="true" id="stream"></iframe>
+                    <% if(temDublado.bool) { %>
+                        <video width="100%" height="100%" controls poster="/images/logo7.png">
+                            <source src="<%= temDublado.url %>" type="video/mp4" name="dublado">
+                            Seu navegador não suporta a tag de video.
+                        </video>
+                        <% } %>
+                            <iframe scrolling="no" src="<%= streamUrl %>" allowfullscreen="true"
+                                webkitallowfullscreen="true" mozallowfullscreen="true" id="stream"></iframe>
                 </div>
                 <a href="/animes/anime/<%= anime.id %>/assistir/<%= episode - 1 %>"><button class="player-buttons"><i
                             class="fa fa-arrow-left" aria-hidden="true"></i> Episódio anterior</button></a>
@@ -32,11 +37,13 @@
                 <a><button class="player-buttons" onclick="location.reload()" id="recarregar"><i class="fa fa-refresh"
                             aria-hidden="true"></i> Recarregar video</button></a>
                 <% if(temDublado.bool) { %>
-                    <a><button style="background: #ffd700; box-shadow: 0px 0px 15px 0px rgba(255,215,0,1);" onclick="getDublado()" class="player-buttons" id="dublado"></button></a>
+                    <a><button style="background: #ffd700; box-shadow: 0px 0px 15px 0px rgba(255,215,0,1);"
+                            onclick="getDublado()" class="player-buttons" id="dublado"></button></a>
                     <% } %>
             </div>
             <script>
-                if('<%= temDublado.url %>'.startsWith('https://hls')) $('#dublado').html('<i class="fa fa-language" aria-hidden="true"></i> Assistir Dublado')
+                twemoji.parse(document.body)
+                if ('<%= temDublado.url %>'.includes('dublado')) $('#dublado').html('<i class="fa fa-language" aria-hidden="true"></i> Assistir Dublado')
                 else $('#dublado').html('<i class="fa fa-language" aria-hidden="true"></i> Assistir Legendado')
                 function getDublado() {
                     $('#recarregar').html('<i class="fa fa-refresh" aria-hidden="true"></i> Voltar para o inglês')

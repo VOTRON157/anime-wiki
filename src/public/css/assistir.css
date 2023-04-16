@@ -13,6 +13,14 @@
     padding-top: 56.25%;
     position: relative;
 }
+
+img.emoji {
+    height: 1em;
+    width: 1em;
+    margin: 0 .05em 0 .1em;
+    vertical-align: -0.1em;
+}
+
 .player-buttons {
     margin-top: 15px;
     cursor: pointer;
