@@ -77,7 +77,7 @@ export default class AnimeController {
                 .then((response) => response.json())
                 .then(async (animelist) => {
                     let temDublado = {}
-                    const servers = [`https://hls.servertv001.com/animes/${anime.attributes.slug}-dublado/${episode < 10 ? '0' + episode : episode}.mp4`, `https://video.servertv001.com/animes/${anime.attributes.slug.at(0)}/${anime.attributes.slug}/${episode < 10 ? '0' + episode : episode}.mp4`, `https://hd.servertv001.com/animeshd/${anime.attributes.slug.at(0)}/${anime.attributes.slug}/${episode < 10 ? '0' + episode : episode}.mp4`]
+                    const servers = [`https://hls.servertv001.com/animes/${anime.attributes.slug}-dublado/${episode < 10 ? '0' + episode : episode}.mp4`, `https://video.servertv001.com/animes/${anime.attributes.slug.at(0)}/${anime.attributes.slug}/${episode < 10 ? '0' + episode : episode}.mp4`, `https://hd.servertv001.com/animeshd/${anime.attributes.slug.at(0)}/${anime.attributes.slug}/${episode < 10 ? '0' + episode : episode}.mp4`, `https://hd3.servertv001.com/animeshd/${anime.attributes.slug.at(0)}/${anime.attributes.slug}/${episode < 10 ? '0' + episode : episode}.mp4`, `https://hd2.servertv001.com/animeshd/${anime.attributes.slug.at(0)}/${anime.attributes.slug}/${episode < 10 ? '0' + episode : episode}.mp4`]
                     for (var i in servers) {
                         const response = await fetch(servers[i])
                         if (response.ok) {

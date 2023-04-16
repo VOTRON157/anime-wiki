@@ -32,13 +32,12 @@
                 <a><button class="player-buttons" onclick="location.reload()" id="recarregar"><i class="fa fa-refresh"
                             aria-hidden="true"></i> Recarregar video</button></a>
                 <% if(temDublado.bool) { %>
-                    <a><button style="background: #ffd700; box-shadow: 0px 0px 15px 0px rgba(255,215,0,1);" onclick="getDublado()" class="player-buttons" id="dublado"><i
-                                class="fa fa-language" aria-hidden="true"></i> Assistir dublado</button></a>
+                    <a><button style="background: #ffd700; box-shadow: 0px 0px 15px 0px rgba(255,215,0,1);" onclick="getDublado()" class="player-buttons" id="dublado"></button></a>
                     <% } %>
             </div>
             <script>
-                if(/hls/m.test('<%= temDublado.url %>')) $('#dublado').html = 'Assistir Dublado'
-                else  $('#dublado').html = 'Assistir Legendado'
+                if(/hls/m.test('<%= temDublado.url %>')) $('#dublado').html('<i class="fa fa-language" aria-hidden="true"></i> Assistir Dublado')
+                else $('#dublado').html('<i class="fa fa-language" aria-hidden="true"></i> Assistir Legendado')
                 function getDublado() {
                     $('#recarregar').html('<i class="fa fa-refresh" aria-hidden="true"></i> Voltar para o inglês')
                     $('video').css('display', 'block');
