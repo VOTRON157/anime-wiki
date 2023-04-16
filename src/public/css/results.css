@@ -31,21 +31,21 @@ section>h1 {
     border-radius: 8px;
     height: 300px;
     transition: width 2.0s ease;
-    border-right: 4px solid #fff15b;
+    border-right: 4px solid rgb(98, 236, 98);
     flex-direction: row;
     box-shadow: 0px 0px 20px rgb(0, 0, 0, 0.7);
     background: #2c2f33;
 }
 
 .card-right>a>button:hover {
-    box-shadow: 0px 0px 20px #fff15b;
+    box-shadow: 0px 0px 20px rgb(98, 236, 98);
 }
 .card-right>a>button {
     border-radius: 5px;
     width: 100px;
     height: 35px;
     cursor: pointer;
-    background-color: #fff15b;
+    background-color: rgb(98, 236, 98);
     box-shadow: none;
     transition: box-shadow 1s;
     border: 1px solid white;

@@ -36,7 +36,7 @@
                     <% } %>
             </div>
             <script>
-                if(/hls/m.test('<%= temDublado.url %>')) $('#dublado').html('<i class="fa fa-language" aria-hidden="true"></i> Assistir Dublado')
+                if('<%= temDublado.url %>'.startsWith('https://hls')) $('#dublado').html('<i class="fa fa-language" aria-hidden="true"></i> Assistir Dublado')
                 else $('#dublado').html('<i class="fa fa-language" aria-hidden="true"></i> Assistir Legendado')
                 function getDublado() {
                     $('#recarregar').html('<i class="fa fa-refresh" aria-hidden="true"></i> Voltar para o inglês')
