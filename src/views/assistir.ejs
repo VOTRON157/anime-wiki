@@ -15,6 +15,10 @@
                 <h1>Assistindo: <%= anime.attributes.canonicalTitle %>: Episódio n. <%= episode %>
                 </h1>
                 <div class="iframe-container">
+                    <video width="100%" height="100%" controls>
+                        <source src="<%= temDublado.url %>" type="video/mp4" name="dublado">
+                        Your browser does not support the video tag.
+                    </video>
                     <iframe scrolling="no" src="<%= streamUrl %>" allowfullscreen="true" webkitallowfullscreen="true"
                         mozallowfullscreen="true" id="stream"></iframe>
                 </div>
@@ -25,31 +29,24 @@
                             aria-hidden="true"></i></button></a>
                 <a><button class="player-buttons" onclick="history.back()"><i class="fa fa-film" aria-hidden="true"></i>
                         Todos os episodios</button></a>
-                <a><button class="player-buttons" onclick="location.reload()"><i class="fa fa-refresh"
-                            aria-hidden="true"></i> Recarregar video / Ver em inglês</button></a>
-                <% if(temDublado) { %>
-                    <a><button style="background: gold;" onclick="openDublado()" class="player-buttons"><i
-                                class="fa fa-language" aria-hidden="true"></i> Assistir
-                            dublado</button></a>
+                <a><button class="player-buttons" onclick="location.reload()" id="recarregar"><i class="fa fa-refresh"
+                            aria-hidden="true"></i> Recarregar video</button></a>
+                <% if(temDublado.bool) { %>
+                    <a><button style="background: gold;" onclick="getDublado()" class="player-buttons" id="dublado"><i
+                                class="fa fa-language" aria-hidden="true"></i> Assistir dublado</button></a>
                     <% } %>
             </div>
-
             <script>
-                function openDublado() {
-                    Swal.fire({
-                        title: 'Clique no botão "Copiar" para copiar o link do video dublado, em seguida cole o link no seu nevagador.',
-                        showCancelButton: true,
-                        confirmButtonText: 'Copiar',
-                        cancelButtonText: `Deixa pra lá`,
-                    }).then((result) => {
-                        if (result.isConfirmed) {
-                            navigator.clipboard.writeText('<%= dubLink %>');
-                            Swal.fire('Link copiado para a aréa de transferencia.', '', 'success')
-                        }
-                    })
+                if(/hls/m.test('<%= temDublado.url %>')) $('#dublado').html = 'Assistir Dublado'
+                else  $('#dublado').html = 'Assistir Legendado'
+                function getDublado() {
+                    $('#recarregar').html('<i class="fa fa-refresh" aria-hidden="true"></i> Voltar para o inglês')
+                    $('video').css('display', 'block');
+                    $(window.document.getElementById('stream')).remove();
+                    $('#dublado')[0].disabled = true
+                    $('#dublado').css('cursor', 'not-allowed')
                 }
             </script>
-
             <%- include('partials/footer') %>
 </body>
 

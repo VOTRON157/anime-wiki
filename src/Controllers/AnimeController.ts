@@ -69,27 +69,30 @@ export default class AnimeController {
     }
     public async assistir(req: Request, res: Response, next: NextFunction) {
         const animeId = req.params.id
-        const episode = parseInt(req.params.episode)
+        let episode = parseInt(req.params.episode)
 
         this.instance(`anime?filter[id]=${animeId}`).then(response => {
             const anime = response.data.data[0] as APIAnimeResponse
             fetch(`https://gogoanime.consumet.stream/vidcdn/watch/${anime.attributes.slug}-episode-${episode}`)
                 .then((response) => response.json())
                 .then(async (animelist) => {
-                    let i = 0
-                    let dubUrl = [`https://lightspeedst.net/s1/mp4/${anime.attributes.slug}-dublado/sd/${episode}.mp4`, `https://lightspeedst.net/s2/mp4/${anime.attributes.slug}-dublado/sd/${episode}.mp4`, `https://lightspeedst.net/s3/mp4/${anime.attributes.slug}-dublado/sd/${episode}.mp4`, `https://lightspeedst.net/s4/mp4/${anime.attributes.slug}-dublado/sd/${episode}.mp4`, `https://lightspeedst.net/s5/mp4/${anime.attributes.slug}-dublado/sd/${episode}.mp4`]
-                    let temDublado: boolean = false;
-                    for (let url of dubUrl) {
-                        temDublado = (await fetch(url)).ok
-                        if (temDublado) break
-                        i += 1
+                    let temDublado = {}
+                    const servers = [`https://hls.servertv001.com/animes/${anime.attributes.slug}-dublado/${episode < 10 ? '0' + episode : episode}.mp4`, `https://video.servertv001.com/animes/${anime.attributes.slug.at(0)}/${anime.attributes.slug}/${episode < 10 ? '0' + episode : episode}.mp4`, `https://hd.servertv001.com/animeshd/${anime.attributes.slug.at(0)}/${anime.attributes.slug}/${episode < 10 ? '0' + episode : episode}.mp4`]
+                    for (var i in servers) {
+                        const response = await fetch(servers[i])
+                        if (response.ok) {
+                            temDublado = {
+                                bool: true,
+                                url: servers[i]
+                            }
+                            break
+                        }
                     }
                     res.render('assistir', {
                         temDublado: temDublado,
                         anime,
                         streamUrl: animelist.Referer,
                         episode,
-                        dubLink: dubUrl[i]
                     })
                 })
         })
