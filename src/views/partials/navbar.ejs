@@ -4,7 +4,7 @@
 
 <nav>
     <div class="navbar-left">
-        <a href="/" style="height: 100%; align-items: center; display: flex;"><img src="/images/logo6.png" alt="Logo do Site" height="80%"></a>
+        <a href="/" class="navbar-logo"><img src="/images/logo6.png" alt="Logo do Site" height="80%"></a>
         <div class="navbar-buttons">
             <a href="/"><button class="buttons-style-nav">
                     <i class="fa fa-home"></i> Inicio
@@ -13,6 +13,7 @@
                     <i class="fa-brands fa-github"></i> Github
                 </button></a>
         </div>
+        <i class="fa fa-bars menu" aria-hidden="true"></i>
     </div>
     <div class="navbar-direita">
         <form method="get" action="animes/search">
@@ -22,11 +23,40 @@
                 <input type="text" class="navbar-input" name="query" required>
             </div>
         </form>
+        <div class="navbar-buttons">
+            <a href="#"><button class="buttons-style-nav">
+                    <i class="fa-solid fa-right-to-bracket"></i> Logar
+                </button></a>
+            <a href="#"><button class="buttons-style-nav">
+                    <i class="fa-solid fa-user-plus"></i> Criar conta
+                </button></a>
+        </div>
+    </div>
+</nav>
+<div class="dropdown">
+    <div class="dropdown-item">
+        <a href="/"><button class="buttons-style-nav">
+                <i class="fa fa-home"></i> Inicio
+            </button></a>
+    </div>
+    <div class="dropdown-item">
+        <a href="https://github.com/VOTRON157/anime-wiki"><button class="buttons-style-nav">
+                <i class="fa-brands fa-github"></i> Github
+            </button></a>
+    </div>
+    <div class="dropdown-item">
         <a href="#"><button class="buttons-style-nav">
                 <i class="fa-solid fa-right-to-bracket"></i> Logar
             </button></a>
+    </div>
+    <div class="dropdown-item">
         <a href="#"><button class="buttons-style-nav">
                 <i class="fa-solid fa-user-plus"></i> Criar conta
             </button></a>
     </div>
-</nav>
+    <div class="dropdown-item">
+        <form method="get" action="animes/search">
+            <input type="text" class="dropdown-input" name="query" required placeholder="Pesquisar animes">
+        </form>
+    </div>
+</div>

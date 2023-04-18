@@ -4,18 +4,22 @@
 
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,200&family=Righteous&display=swap');
+
 i {
     margin-right: 8px;
 }
+
 nav:hover {
     background-color: #1e2124;
 }
+
 nav {
     transition: all 0.5s;
     z-index: 2;
     top: 0px;
     justify-content: space-between;
     position: sticky;
+    width: 100%;
     backdrop-filter: blur(3px);
     background-color: transparent;
     display: flex;
@@ -23,6 +27,7 @@ nav {
 }
 
 .navbar-left {
+    justify-content: center;
     margin-left: 12%;
     align-items: center;
     display: flex;
@@ -47,9 +52,11 @@ nav {
     transition: all 0.4s;
     border: none;
 }
+
 .buttons-style-nav:focus {
     transform: scale(0.9);
 }
+
 .buttons-style-nav:hover {
     color: black;
     background: rgb(98, 236, 98);
@@ -75,7 +82,7 @@ nav {
 }
 
 .navbar-input:focus {
-    cursor:auto;
+    cursor: auto;
     outline: none;
     border-bottom: 2px solid rgb(98, 236, 98);
     width: 200px;
@@ -85,4 +92,129 @@ nav {
     color: white;
     font-size: 15px;
     padding-left: 13%;
+}
+
+.navbar-logo {
+    height: 100%;
+    align-items: center;
+    display: flex;
+}
+
+.menu::before {
+    font-size: 30px;
+}
+
+.menu:hover {
+    transform: scale(0.8);
+}
+
+.menu {
+    transition: all 1s;
+    cursor: pointer;
+    display: none !important;
+    color: white;
+}
+
+.dropdown-item a {
+    width: 100%;
+}
+
+.dropdown-item button {
+    width: 100%;
+}
+
+.dropdown-item {
+    padding: 3px;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+
+}
+
+.dropdown-item form {
+    display: flex;
+    align-items: center;
+    height: 30px;
+    justify-content: center;
+    width: 100%;
+}
+
+.dropdown-item input:not(text) {
+    padding-left: 13px;
+}
+
+.dropdown-item input {
+    outline: none;
+    border: none;
+    width: 90%;
+    height: 100%;
+    border-radius: 3px;
+}
+
+.dropdown {
+    box-shadow: 0px 21px 60px -3px rgba(0, 0, 0, 0.75);
+    transition: width 0.5s;
+    z-index: 1;
+    display: none;
+    padding: 30px;
+    width: 90vw;
+    left: 4.0%;
+    border-radius: 5px;
+    position: fixed;
+    top: 80px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #1e2124;
+}
+
+@keyframes dr_saindo {
+    from {
+        margin-top: 0px;
+    }
+
+    to {
+        margin-top: -360px;
+    }
+}
+
+@keyframes dr_entrando {
+    from {
+        margin-top: -300px;
+    }
+
+    to {
+        margin-top: 0px;
+    }
+}
+
+@media only screen and (max-width: 725px) {
+    .navbar-left {
+        margin-left: 8%;
+    }
+
+    .menu {
+        display: block !important;
+    }
+
+    .navbar-direita {
+        display: none;
+    }
+
+    .navbar-buttons {
+        display: none;
+    }
+
+    .navbar-logo {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+@media only screen and (max-width: 1055px) {
+    .navbar-direita button {
+        display: none;
+    }
 }

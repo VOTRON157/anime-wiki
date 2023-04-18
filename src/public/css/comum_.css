@@ -14,8 +14,14 @@ html {
     height: 100vh;
 }
 
+img.emoji {
+    height: 1em;
+    width: 1em;
+    margin: 0 .05em 0 .1em;
+    vertical-align: -0.1em;
+}
+
 body * {
-    font-family: 'Poppins', sans-serif;
     font-family: 'Righteous', cursive;
     box-sizing: border-box;
 }
@@ -48,6 +54,7 @@ body * a {
     height: 120px;
     animation: spin 1s infinite;
 }
+
 .load-text {
     width: 100%;
     text-align: center;
