@@ -1,3 +1,30 @@
+export interface AbsoluteAnimeEpisodeAPIResponse {
+    data: APIEpisodeResponse[]
+    meta: {
+        count: number
+    }
+    links: {
+        first: string
+        prev?: string
+        next?: string
+        last: string
+    }
+}
+
+export interface AbsoluteAnimeAPIResponse {
+    data: APIAnimeResponse[]
+    meta: {
+        count: number
+    }
+    links: {
+        first: string
+        prev?: string
+        next?: string
+        last: string
+    }
+}
+
+
 enum Type {
     Anime = 'anime',
     Manga = 'manga'
@@ -112,9 +139,68 @@ export interface APIAnime {
     showType: subtype
     nsfw: boolean
 }
+
+
+type relationship = {
+    links: {
+        self: string
+        related: string
+    }
+}
+
 export interface APIAnimeResponse {
     id: string
     type: Type
     link: link
     attributes: APIAnime
+    relationships: {
+        genres: relationship
+        categories: relationship
+        castings: relationship
+        installments: relationship
+        mappings: relationship
+        reviews: relationship
+        mediaRelationships: relationship
+        characters: relationship
+        staff: relationship
+        productions: relationship
+        quotes: relationship
+        episodes: relationship
+        streamingLinks: relationship
+        animeProductions: relationship
+        animeCharacters: relationship
+        animeStaff: relationship
+    }
+}
+
+// Episodes types
+type episodeTitles = {
+    en_jp: string
+}
+
+export interface APIEpisodeResponse {
+    id: string
+    type: Type
+    link: link
+    attributes: APIEpisode
+    relationships: {
+        media: relationship
+        videos: relationship
+    }
+}
+
+export interface APIEpisode {
+    createdAt: string
+    updatedAt: string
+    titles: episodeTitles
+    canonicalTitle: string
+    seasonNumber: number
+    number: number
+    relativeNumber: number
+    synopsis: string
+    airdate: string
+    length: string
+    thumbnail: {
+        original: string
+    }
 }

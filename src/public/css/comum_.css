@@ -10,10 +10,6 @@ body {
     height: 100%;
 }
 
-html {
-    height: 100vh;
-}
-
 img.emoji {
     height: 1em;
     width: 1em;

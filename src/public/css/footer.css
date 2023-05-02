@@ -1,14 +1,49 @@
 /* 
     Estilo do footer
 */
+@media only screen and (max-width: 1055px) {
+    footer {
+        flex-direction: column;
+    }
+    footer div:first-child {
+        border-bottom: 2px solid #1e21243a !important;
+    }
+    footer div {
+        border-right: none;
+        margin-left: 0px !important;
+        width: 100% !important;
+    }
+}
 
+footer p {
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: small;
+    line-break:normal;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+}
+footer div:first-child {
+    border-right: 2px solid #1e21243a;
+}
+footer div {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+    width: 50%;
+}
 footer {
+    display: flex;
+    justify-content: space-between;
     text-align: center;
     font-size: large;
     font-family: cursive !important;
     color: rgb(255, 255, 255);
     background: #2c2f33;
-    height: 50px;
-    margin-top: 50px;
-    line-height: 50px;
+    height: fit-content;
+    bottom: 0px;
+    line-height: 0px;
 }

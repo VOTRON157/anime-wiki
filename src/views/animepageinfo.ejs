@@ -32,17 +32,56 @@
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowfullscreen></iframe>
             </div>
-            <section style="display: flex; align-items: center; justify-content: center; flex-direction: column;">
-                <h1 style="color: white;">Episodios</h1>
-                <div class="episodes-buttons">
-                    <% for(let episode=0; episode < episodes; episode++) { %>
-                        <a href="animes/anime/<%= anime.id %>/assistir/<%= episode+1 %>">
-                            <button><i class="fa fa-play-circle" aria-hidden="true"></i> Episodio n. <%= episode+1 %>
-                                    </button>
+            <section id="episodios"
+                style="align-items: center; display: flex; justify-content: center; align-items: center; flex-direction: column;">
+                <div class="episodes-container">
+                    <h1 style="color: white;">Episodios</h1>
+                    <% for(let episode of episodes) { %>
+                        <a href="animes/anime/<%= anime.id %>/assistir/<%= 1 %>">
+                            <div class="episodes-card">
+                                <img src="<%= episode.attributes.thumbnail?.original || anime.attributes.posterImage?.small %>">
+                                <div class="anime-texts">
+                                    <h4>
+                                        <%= episode.attributes.canonicalTitle %>
+                                    </h4>
+                                    <h5>EPISÓDIO <%= episode.attributes.number %>
+                                    </h5>
+                                </div>
+                            </div>
                         </a>
                         <% } %>
-                    
                 </div>
+                <div class="display">
+                    <button id="prev"><i class="fa fa-arrow-left" aria-hidden="true"></i> Págima anterior</button>
+                    <button id="next">Proxima página <i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+                </div>
+                <script>
+                    let episodesSec = $(".episodios")
+                    let animeId = "<%= anime.id %>"
+                    let currentPage = 0
+                    let episodesDiv = $(".episodes-container")
+
+                    $("#next").click(function (e) {
+                        $("#next").prop('disabled', true)
+                        $.post(window.location.href, {
+                            offset: currentPage
+                        }, function (res, status) {
+                            console.log(res)
+                            if (status != "success") return 0;
+                            episodesDiv.empty()
+                            currentPage = res.page
+                            episodesDiv.append(`<h1 style="color: white;">Episodios</h1>`)
+                            for (let episode of res.episodes) {
+                                episodesDiv.append(`<a href="animes/anime/${animeId}/assistir/${episode.attributes.number}"><div class="episodes-card"><img src="${episode.attributes.thumbnail?.original}"><div class="anime-texts"><h4>${episode.attributes.canonicalTitle}</h4><h5>EPISÓDIO ${episode.attributes.number}</h5></div></div></a>`)
+                            }
+                            $("#next").prop('disabled', false)
+                            $('html, body').animate({
+                                scrollTop: 1100
+                            }, 600);
+                        })
+
+                    })
+                </script>
             </section>
             <%- include('partials/footer') %>
 </body>

@@ -13,16 +13,21 @@
     padding-top: 56.25%;
     position: relative;
 }
-.poster {
-    width: 100%;
-    height: 100%;
+#players button:hover {
+    box-shadow: 0px 0px 0px 0px rgb(153, 5, 5);
+    background: rgb(199, 5, 5);
+}
+#players button {
+    transition: all 1s;
+    box-shadow: 0px 5px 0px 1px rgb(153, 5, 5);
     cursor: pointer;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    background: url(/images/click_en.png);
-    background-size: cover;
+    margin-right: 7px;
+    margin-bottom: 10px;
+    background: red;
+    border: none;
+    width: fit-content;
+    padding: 10px;
+    border-radius: 3px;
 }
 
 .player-buttons {
@@ -33,22 +38,8 @@
     padding: 10px;
     border-radius: 3px;
 }
-.iframe-container video {
-    display: none;
-    border: 0;
-    height: 100%;
-    left: 0;
-    position: absolute;
-    overflow: hidden;
-    top: 0;
-    width: 100%;
-}
-.iframe-container iframe {
-    border: 0;
-    height: 100%;
-    left: 0;
-    position: absolute;
-    overflow: hidden;
-    top: 0;
-    width: 100%;
+
+/* botões do plyr */
+:root {
+    --plyr-color-main: red
 }
