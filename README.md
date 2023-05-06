@@ -46,7 +46,7 @@ http://127.0.0.1:3000/
 http://localhost:3000/
 ```
 
-*Ao acessar você tabém vera algo parecido com isso (Captura de tela tirada em 08/04/2023):*
+*Ao acessar você tabém vera algo parecido com isso (Captura de tela tirada em 06/05/2023):*
 
 <img src="images/anime3.png" width="600px" style="display: block; margin: auto;">
 <br><br>

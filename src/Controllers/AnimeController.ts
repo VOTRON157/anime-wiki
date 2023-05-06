@@ -21,6 +21,7 @@ export default class AnimeController {
             const anime = await Anime.getAnimeById(id)
             const episodes = await Anime.getAnimeEpisodes(anime.id, page)
             res.render('animepageinfo', { anime, episodes: episodes })
+            console.log(anime.attributes)
         } catch (e) {
             console.log(e)
             res.send('Aconteceu um erro no lado do servidor que impediu essa ação, <a href="/">Clique aqui</a> para voltar a página inicial')

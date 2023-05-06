@@ -15,13 +15,68 @@
             </div>
             <div class="poster">
                 <img src="<%= anime.attributes.posterImage?.small %>" width="300px">
+                <div class="actions">
+                    <button><i class="fa-solid fa-heart-circle-plus"></i> Favoritar</button>
+                    <button><i class="fa-solid fa-check"></i> Assistido</button>
+                    <button><i class="fa-solid fa-clock"></i> Assistir</button>
+                </div>
                 <div class="anime-desc">
                     <h2>
                         <%= anime.attributes.canonicalTitle %>
                     </h2>
-                    <p style="color: white;">
-                        <%= anime.attributes.synopsis %>
-                    </p>
+                    <div class="anime-d">
+                        <span>Episodios:</span>
+                        <%= anime.attributes.episodeCount || "???" %>
+                    </div>
+                    <div class="anime-d">
+                        <span>Lançamento:</span>
+                        <%= (new Date(anime.attributes.startDate)).toLocaleDateString() || "???" %>
+                    </div>
+                    <div class="anime-d">
+                        <span>Status:</span>
+                        <%= anime.attributes.status.replace("current", "Em exibição" ).replace("finished", "Finalizado"
+                            ).replace("unreleased", "Não lançado" ).replace("upcoming", "Em breve" ) || "???" %>
+                    </div>
+                    <style>
+                        .actions button:hover {
+                            background-color: aquamarine;
+                         }
+                        .actions button {
+                            transition: all 0.5s;
+                            border: none;
+                            border-radius: 2px;
+                            background-color: rgb(255, 255, 255);
+                            cursor: pointer;
+                            font-weight: 100;
+                            font-size: larger;
+                            height: 40px;
+                            margin-top: 15px;
+                            width: 100%;
+                        }
+                        .actions {
+                            width: 300px;
+                            display: flex;
+                            flex-direction: column;
+                            top: 100%;
+                            position: absolute;
+                        }
+
+                        .anime-d span {
+                            color: rgb(226, 225, 225);
+                            font-family: monospace;
+                        }
+
+                        .anime-d {
+                            font-size: larger;
+                            color: rgb(183, 208, 255) !important;
+                            font-family: monospace;
+                            margin: 8px;
+                            text-align: justify;
+                            font-weight: 100;
+                            color: white;
+                            border-bottom: 1px solid rgba(128, 128, 128, 0.397);
+                        }
+                    </style>
                 </div>
             </div>
             <div class="yt-video">
@@ -36,15 +91,16 @@
                 style="align-items: center; display: flex; justify-content: center; align-items: center; flex-direction: column;">
                 <div class="episodes-container">
                     <h1 style="color: white;">Episodios</h1>
-                    <% for(let episode of episodes) { %>
-                        <a href="animes/anime/<%= anime.id %>/assistir/<%= 1 %>">
+                    <% for(let i in episodes) { %>
+                        <a href="animes/anime/<%= anime.id %>/assistir/<%= parseInt(i) + 1 %>">
                             <div class="episodes-card">
-                                <img src="<%= episode.attributes.thumbnail?.original || anime.attributes.posterImage?.small %>">
+                                <img
+                                    src="<%= episodes[i].attributes.thumbnail?.original || anime.attributes.posterImage?.small %>">
                                 <div class="anime-texts">
                                     <h4>
-                                        <%= episode.attributes.canonicalTitle %>
+                                        <%= episodes[i].attributes.canonicalTitle %>
                                     </h4>
-                                    <h5>EPISÓDIO <%= episode.attributes.number %>
+                                    <h5>EPISÓDIO <%= episodes[i].attributes.number %>
                                     </h5>
                                 </div>
                             </div>
@@ -57,7 +113,6 @@
                 </div>
                 <script>
                     let episodesSec = $(".episodios")
-                    let animeId = "<%= anime.id %>"
                     let currentPage = 0
                     let episodesDiv = $(".episodes-container")
 
@@ -72,7 +127,7 @@
                             currentPage = res.page
                             episodesDiv.append(`<h1 style="color: white;">Episodios</h1>`)
                             for (let episode of res.episodes) {
-                                episodesDiv.append(`<a href="animes/anime/${animeId}/assistir/${episode.attributes.number}"><div class="episodes-card"><img src="${episode.attributes.thumbnail?.original}"><div class="anime-texts"><h4>${episode.attributes.canonicalTitle}</h4><h5>EPISÓDIO ${episode.attributes.number}</h5></div></div></a>`)
+                                episodesDiv.append(`<a href="animes/anime/<%= anime.id %>/assistir/${episode.attributes.number}"><div class="episodes-card"><img src="${episode.attributes.thumbnail?.original}"><div class="anime-texts"><h4>${episode.attributes.canonicalTitle}</h4><h5>EPISÓDIO ${episode.attributes.number}</h5></div></div></a>`)
                             }
                             $("#next").prop('disabled', false)
                             $('html, body').animate({

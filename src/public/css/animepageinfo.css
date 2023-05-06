@@ -139,20 +139,11 @@
     -webkit-text-stroke: 1px black;
 }
 
-.anime-desc>p {
-    padding-right: 5px;
-    max-height: 344.64px;
-    word-break: break-all;
-    overflow-x: hidden;
-    overflow-y: scroll;
-    margin-top: 0px;
-}
-
 .anime-desc {
     max-height: 424.64px;
+    width: 700px;
     position: relative;
     text-align: justify;
-    max-width: 700px;
     padding-left: 40px;
 }
 
