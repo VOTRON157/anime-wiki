@@ -39,7 +39,7 @@ body * a {
 }
 
 .loader {
-    border: 16px solid #ffffff;
+    border: 16px solid transparent;
     border-top: 16px solid rgb(98, 236, 98);
     border-radius: 50%;
     position: absolute;

@@ -1,6 +1,7 @@
 import express from 'express'
 import Main from './Routes/Main'
 import Anime from './Routes/Animes'
+import Auth from "./Routes/Auth"
 import path from 'path'
 import bodyParser from 'body-parser'
 
@@ -13,6 +14,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(express.static(path.join(__dirname, 'public')))
 app.use('/', Main);
 app.use('/animes', Anime)
+app.use('/auth', Auth)
 
 app.use(function(req, res, next) {
     res.status(404).send('<img src="https://i0.wp.com/boingboing.net/wp-content/uploads/2011/12/404.jpg?w=750">')
